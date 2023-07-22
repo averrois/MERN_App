@@ -37,3 +37,75 @@ nav .links{
   font-weight: 500;
   color: white;
 }
+
+
+/* Css for the forms */
+
+.forms{
+  width: 70%;
+  margin: 3% auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  width: 350px;
+  height: 100%;
+  padding: 25px 25px;
+}
+.left .contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  width: 73%;
+  margin: auto;
+}
+.left h3 {
+  text-align: left;
+  margin-bottom: 40px;
+  font-size: 25px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+.left input {
+  border: none;
+  width: 80%;
+  margin: 15px 0;
+  border-bottom: 1px solid black;
+  padding: 7px 9px;
+  width: 100%;
+  overflow: hidden;
+  background: 0 0;
+  font-weight: 200;
+  font-size: 14px;
+}
+.left {
+  background: linear-gradient(-45deg, #fdfdfd, #fff);
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.submit {
+  border: none;
+  padding: 22px 70px;
+  border-radius: 4px;
+  display: block;
+  margin: auto;
+  margin-top: 120px;
+  background: black;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
+@media (max-width: 900px) {
+  .forms{
+    flex-direction: column;
+  }
+  .left {
+    margin-bottom: 40px;
+  }
+}
