@@ -24,6 +24,7 @@ nav ul {
   justify-content: space-between;
   align-items: center;
   list-style-type: none;
+
 }
 
 nav ul li{
@@ -33,9 +34,12 @@ nav ul li{
 
 nav .links{
   text-decoration: none;
-  font-size: 20px;
-  font-weight: 500;
   color: white;
+  font-weight: 500;
+  border: 1px solid white;
+  padding: 12px 40px;
+  border-radius: 2px ;
+
 }
 
 
@@ -105,11 +109,40 @@ button{
   cursor: pointer;
 }
 
+.logout{
+  width: 140px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  background: white;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all .3s ease-in-out;
+}
+
+
+
+.logout:hover{
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  font-weight: 100;
+  transform: scale(1.1);
+}
+
 @media (max-width: 900px) {
   .forms{
     flex-direction: column;
   }
   .left {
     margin-bottom: 40px;
+  }
+  nav .links{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    border: none;
+  
   }
 }

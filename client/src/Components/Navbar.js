@@ -1,7 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import {useNavigate} from 'react-router-dom';
 
 function Navbar() {
+    const navigate = useNavigate();
+    // eslint-disable-next-line
+    const [cookies, setCookies] = useCookies(["access_token"]);
+
+    const logout = () => {
+        setCookies("access_token", "");
+        window.localStorage.removeItem("userID");
+        navigate("/auth");
+    }
+
   return (
     <nav>
         <ul>
@@ -15,7 +27,17 @@ function Navbar() {
                 <Link to="/saved-post" className='links'>Saved Post</Link>
             </li>
             <li>
-                <Link to="/auth" className='links'>Sign in</Link>
+                {!cookies.access_token ? (
+                    <Link to="/auth" className='links btn'>Sign in</Link>
+                ) : (
+                    <button
+                        className='logout'
+                        onClick={logout}
+                    >
+                        LogOut
+                    </button>
+                )
+                }
             </li>
         </ul>
     </nav>
