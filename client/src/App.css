@@ -101,6 +101,10 @@ nav .links{
 }
 
 
+button{
+  cursor: pointer;
+}
+
 @media (max-width: 900px) {
   .forms{
     flex-direction: column;

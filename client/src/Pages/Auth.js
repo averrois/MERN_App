@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Form from '../Components/Form'
+import axios from 'axios'
 
 const Auth = () => {
   return (
@@ -10,32 +12,46 @@ const Auth = () => {
 }
 
 const Register = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post("http://localhost:3001/auth/register", 
+      {
+        username,
+        password
+      });
+      alert("Registration Completed, Now Login!");
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return(
-    <div className="left">
-      <div className="contact">
-        <form action="">
-          <h3>Register</h3>
-          <input type="text" placeholder="USERNAME" />
-          <input type="text" placeholder="PASSWORD" />
-          <button className="submit">REGISTER</button>
-        </form>
-      </div>
-    </div>
+    <Form 
+      label="Register"
+      username={username}
+      setUsername={setUsername}
+      password={password}
+      setPassword={setPassword}
+      handleSubmit={handleSubmit}
+    />
   )
 }
 
 const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   return(
-    <div className="left">
-      <div className="contact">
-        <form action="">
-          <h3>Login</h3>
-          <input type="text" placeholder="USERNAME" />
-          <input type="text" placeholder="PASSWORD" />
-          <button className="submit">login</button>
-        </form>
-      </div>
-    </div>
+    <Form 
+      label="Login"
+      username={username}
+      setUsername={setUsername}
+      password={password}
+      setPassword={setPassword}
+    />
   )
 }
 
