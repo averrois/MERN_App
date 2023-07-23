@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import {userRouter} from './routes/users.js';
+import {postRouter} from './routes/posts.js';
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/auth", userRouter);
+app.use("/posts", postRouter);
 
 // generate a connection to our mongodb db
 const MONGODB_USERNAME = process.env.MONGODB_USERNAME;
