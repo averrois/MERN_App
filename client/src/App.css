@@ -36,12 +36,21 @@ nav .links{
   text-decoration: none;
   color: white;
   font-weight: 500;
-  border: 1px solid white;
   padding: 12px 40px;
   border-radius: 2px ;
 
 }
 
+nav .btn {
+  border: 1px solid white;
+  transition: all .3s ease-in-out;
+  text-transform: uppercase;
+}
+
+nav .btn:hover{
+  background-color: white;
+  color: black;
+}
 
 /* Css for the forms */
 
@@ -131,6 +140,138 @@ button{
   transform: scale(1.1);
 }
 
+
+
+
+/* Creating Post UI */
+.post{
+  width: 100%;
+  margin-top: 2%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.post .post-container{
+  width: 40%;
+}
+
+.post h3{
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 30px;
+}
+
+
+
+.post-container form{
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+}
+
+.post .row{
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+.post label{
+  margin-top: 12px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.post-container form input{
+  height: 40px;
+  margin-top: 4px;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.post-container textarea{
+  width: 100%;
+  padding: 4px;
+  font-size: 16px;
+  border: 2px solid black;
+  border-radius: 4px;
+  height: 10rem;
+}
+
+.post-container .title_inp input{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.post-container .tags{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tags .tags-row{
+  width: 100%;
+  justify-content: left;
+  align-items: left;
+  display: flex;
+}
+
+
+.post-container button{
+  width: 50%;
+  margin-top: 12px;
+  font-size: 18px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  height: 50px;
+  transition: all .3s ease-in-out;
+
+}
+
+.post-container .tags-row button{
+  height: 40px;
+  margin-top: 4px;
+  width: 40px;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+.tags-row input{
+  margin-top: 0px;
+}
+
+.tags-row span{
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-right: 4px;
+  background-color: rgb(174, 215, 248);
+  padding: 8px 18px;
+  border-radius: 20px;
+  color: #000d18;
+}
+
+.post-container button:hover{
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+}
+
+
 @media (max-width: 900px) {
   .forms{
     flex-direction: column;
@@ -144,5 +285,11 @@ button{
     font-weight: 500;
     border: none;
   
+  }
+  .post .post-container{
+    width: 90%;
+  }
+  .post-container button{
+    width: 100%;
   }
 }
