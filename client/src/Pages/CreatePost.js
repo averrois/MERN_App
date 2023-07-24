@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useGetUserID } from '../hooks/useGetUserID';
+import { useNavigate } from 'react-router-dom';
 
 function CreatePost() {
+  const userID = useGetUserID() ; 
+
   const [post, setPost] = useState({
     title: "",
     content: "",
     tags: [],
     imgUrl: "",
-    userOwner: 0
+    userOwner: userID
   });
+
+  const navigate = useNavigate();
 
   const addTag = (e) => {
     e.preventDefault();
@@ -20,6 +26,7 @@ function CreatePost() {
     try {
       await axios.post("http://localhost:3001/posts", post);
       alert("Post Created!");
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
