@@ -39,18 +39,18 @@ router.put("/", async (req, res) => {
     }
 });
 
-router.get("/savedPosts/ids", async (req, res) => {
+router.get("/savedPosts/ids/:userID", async (req, res) => {
     try {
-        const user = await UserModel.findById(req.body.userID);
+        const user = await UserModel.findById(req.params.userID);
         res.json({savedPosts: user?.savedPosts});
     } catch (error) {
         res.json(error);
     }
 });
 
-router.get("/savePosts", async (req, res) => {
+router.get("/savePosts/:userID", async (req, res) => {
     try {
-        const user = await UserModel.findById(req.body.userID);
+        const user = await UserModel.findById(req.params.userID);
         const savedPosts = await PostModel.find({
             _id: {$in: user.savedPosts},
         });
