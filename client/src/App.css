@@ -254,7 +254,7 @@ button{
   margin-top: 0px;
 }
 
-.tags-row span, .browser span{
+.tags-row span, .article span{
   text-transform: uppercase;
   font-size: 12px;
   font-weight: bold;
@@ -274,7 +274,14 @@ button{
 
 /* Post UI  */
 
-.browser{
+.browser .title{
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.article{
   width: 60%;
   border: black solid 2px;
   border-radius: 10px;
@@ -283,7 +290,7 @@ button{
 
 }
 
-.browser h1{
+.article h1{
   font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
@@ -291,11 +298,11 @@ button{
 
 }
 
-.browser span{
+.article span{
   margin-bottom: 5px;
 }
 
-.browser .img_container{
+.article .img_container{
   margin-top: 15px;
   width: 100%;
   height: 300px;
@@ -303,18 +310,18 @@ button{
   background-size: contain;
   border-radius: 10px;
 }
-.browser img{
+.article img{
   width: 100%;
 }
 
-.browser p{
+.article p{
   margin-top: 10px;
   margin-bottom: 5px;
   font-size: 18px;
   font-weight: 700;
 }
 
-.browser ul {
+.article ul {
   list-style-type: none;
   width: 100%;
 }
@@ -341,7 +348,7 @@ button{
   .post-container button{
     width: 100%;
   }
-  .browser{
+  .article{
     width: 90%;
   }
 }

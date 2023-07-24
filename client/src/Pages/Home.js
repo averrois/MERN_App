@@ -1,42 +1,56 @@
-// import React, {useEffect, useState} from 'react';
-// import axios from 'axios';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 
 function Home() {
-  // const [post, setPost] = useState([]);
+  const [posts, setPosts] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchPost = async () => {
-  //     try {
-  //       const response = await axios.get("http://localhost:3001/posts", post);
-  //       setPost(response.data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const response = await axios.get("http://localhost:3001/posts", posts);
+        setPosts(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-  //   fetchPost();
+    fetchPost();
 
-  // });
+  });
   return (
     <div className='browser'>
-      <ul>
-        <li>
-          <h1>Title</h1>
-        </li>
-        <li>
-          <span>Tags</span>
-        </li>
-        <li>
-          <div className="img_container">
-            <img src="https://avatars.githubusercontent.com/u/70775489?v=4"/>
-          </div>
-        </li>
-        <li>
-          <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu turpis sed lectus vestibulum eleifend. Etiam fringilla magna sit amet arcu facilisis, ac auctor neque bibendum. Sed eleifend libero non nibh sagittis, eget malesuada arcu scelerisque. Sed auctor facilisis massa, ac facilisis arcu euismod in. Duis tincidunt elit quis metus feugiat, ac consectetur quam ultrices. Proin nec justo mauris. Proin vehicula libero nec lectus scelerisque malesuada.
-          </p>
-        </li>
-      </ul>
+      <h1 className='title'>All Posts ...</h1>
+      {posts.map((post) => (
+        
+        <div className='article'>
+          <ul>
+            <li>
+              <h1>{post.title}</h1>
+            </li>
+            <li>
+              <span>Tags</span>
+            </li>
+            <li>
+              <div className="img_container">
+                <img src={post.imgUrl} alt={post.title}/>
+              </div>
+            </li>
+            <li>
+              <p>
+                {post.content}
+              </p>
+            </li>
+            <li>
+              <button
+                type='button'
+              >
+                Save
+              </button>
+            </li>
+          </ul>
+        </div>
+      ))
+    }     
     </div>
   )
 }
