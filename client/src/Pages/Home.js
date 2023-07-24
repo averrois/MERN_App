@@ -27,8 +27,13 @@ function Home() {
           <span>Tags</span>
         </li>
         <li>
-          <p>Lorem LoremLoremLoremLoremLoremLoremLoremLoremLorem LoremLoremLoremLoremLorem
-          LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem
+          <div className="img_container">
+            <img src="https://avatars.githubusercontent.com/u/70775489?v=4"/>
+          </div>
+        </li>
+        <li>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu turpis sed lectus vestibulum eleifend. Etiam fringilla magna sit amet arcu facilisis, ac auctor neque bibendum. Sed eleifend libero non nibh sagittis, eget malesuada arcu scelerisque. Sed auctor facilisis massa, ac facilisis arcu euismod in. Duis tincidunt elit quis metus feugiat, ac consectetur quam ultrices. Proin nec justo mauris. Proin vehicula libero nec lectus scelerisque malesuada.
           </p>
         </li>
       </ul>
