@@ -11,7 +11,6 @@ function SavedPost() {
       try {
         const response = await axios.get(`http://localhost:3001/posts/savedPosts/${userID}`);
         setSavedPosts(response.data.savedPosts);
-        console.log(response.data.savedPosts);
       } catch (error) {
         if (error.response.status === 404) {
           console.log('User not found or has no saved posts.');

@@ -1,11 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useGetUserID} from '../hooks/useGetUserID';
+import { useCookies } from 'react-cookie';
 
 function Home() {
   const userID = useGetUserID();
   const [posts, setPosts] = useState([]);
   const [savedPosts, setSavedPosts] = useState([]);
+  // eslint-disable-next-line
+  const [cookies, _] = useCookies(["access_token"]);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -33,7 +36,10 @@ function Home() {
 
   const savePost = async (postID) => {
     try {
-      const response = await axios.put("http://localhost:3001/posts", {postID, userID});
+      const response = await axios.put("http://localhost:3001/posts",
+      {postID, userID},
+      {headers: {Authorization: cookies.access_token}}
+      );
       setSavedPosts(response.data.savedPosts);
     } catch (error) {
       console.error(error);
