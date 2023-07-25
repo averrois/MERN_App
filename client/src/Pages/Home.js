@@ -30,9 +30,12 @@ function Home() {
     };
 
     fetchPost();
-    fetchSavedPost();
+    // eslint-disable-next-line
+    if (cookies.access_token) {
+      fetchSavedPost();
+    }
 
-  }, [userID]);
+  }, [userID, cookies.access_token]);
 
   const savePost = async (postID) => {
     try {

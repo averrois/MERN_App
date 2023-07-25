@@ -23,9 +23,11 @@ function Navbar() {
             <li>
                 <Link to="/create-post" className='links'>Create Post</Link>
             </li>
-            <li>
-                <Link to="/saved-post" className='links'>Saved Post</Link>
-            </li>
+            {cookies.access_token && (
+                <li>
+                    <Link to="/saved-post" className='links'>Saved Post</Link>
+                </li>
+            )}
             <li>
                 {!cookies.access_token ? (
                     <Link to="/auth" className='links btn'>Sign in</Link>
