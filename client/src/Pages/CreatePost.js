@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useGetUserID } from '../hooks/useGetUserID';
 import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 function CreatePost() {
-  const userID = useGetUserID() ; 
+  const userID = useGetUserID() ;
+  // eslint-disable-next-line
+  const [cookies, _] = useCookies(["access_token"]);
 
   const [post, setPost] = useState({
     title: "",
@@ -24,7 +27,9 @@ function CreatePost() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/posts", post);
+      await axios.post("http://localhost:3001/posts", post, 
+      {headers: {Authorization: cookies.access_token}}
+      );
       alert("Post Created!");
       navigate("/");
     } catch (error) {
