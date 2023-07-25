@@ -48,7 +48,7 @@ router.get("/savedPosts/ids/:userID", async (req, res) => {
     }
 });
 
-router.get("/savePosts/:userID", async (req, res) => {
+router.get("/savedPosts/:userID", async (req, res) => {
     try {
         const user = await UserModel.findById(req.params.userID);
         const savedPosts = await PostModel.find({
@@ -59,6 +59,8 @@ router.get("/savePosts/:userID", async (req, res) => {
         res.json(error)
     }
 })
+
+
 
 
 export {router as postRouter};
