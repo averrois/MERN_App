@@ -27,30 +27,29 @@ function SavedPost() {
   return (
     <div className='browser'>
       <h1 className='title'>Saved Posts ...</h1>
-      {savedPosts.map((post, index) => (
-        
-        <div className='article' key={index}>
+      {savedPosts.map((post) => (
+        <div className='article' key={post._id}>
           <ul>
             <li>
               <h1>{post.title}</h1>
             </li>
             <li>
-              <span>Tags</span>
+              {post.tags.map((tag, index) => (
+                <span key={index}>{tag}</span>
+              ))}
             </li>
             <li>
               <div className="img_container">
-                <img src={post.imgUrl} alt={post.title}/>
+                <img src={post.imgUrl} alt={post.title} />
               </div>
             </li>
             <li>
-              <p>
-                {post.content}
-              </p>
+              <p>{post.content}</p>
             </li>
           </ul>
         </div>
-      ))
-    }     
+      ))}
+
     </div>
   )
 }

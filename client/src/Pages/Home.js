@@ -53,7 +53,9 @@ function Home() {
               <h1>{post.title}</h1>
             </li>
             <li>
-              <span>Tags</span>
+              {post.tags.map((tag, index) => (
+                <span key={index}>{tag}</span>
+              ))}
             </li>
             <li>
               <div className="img_container">
