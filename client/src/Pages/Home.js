@@ -49,6 +49,11 @@ function Home() {
     }
   }
 
+  const isLogin = (e) => {
+    e.preventDefault();
+    alert("Please, login first!");
+  } 
+
   const isPostSaved = (id) => savedPosts.includes(id);
 
   return (
@@ -78,7 +83,7 @@ function Home() {
             </li>
             <li>
               <button 
-                onClick={() => savePost(post._id)} 
+                onClick={() => cookies.access_token ? savePost(post._id) : isLogin} 
                 type='button'
                 disabled={isPostSaved(post._id)}
               >
