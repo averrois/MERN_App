@@ -13,8 +13,12 @@ function SavedPost() {
         setSavedPosts(response.data.savedPosts);
         console.log(response.data.savedPosts);
       } catch (error) {
-        console.error(error);
-      }
+        if (error.response.status === 404) {
+          console.log('User not found or has no saved posts.');
+        } else {
+          console.error(error);
+        }
+      }      
     };
     fetchSavedPost();
 
@@ -23,9 +27,9 @@ function SavedPost() {
   return (
     <div className='browser'>
       <h1 className='title'>Saved Posts ...</h1>
-      {savedPosts.map((post) => (
+      {savedPosts.map((post, index) => (
         
-        <div className='article' key={post._id}>
+        <div className='article' key={index}>
           <ul>
             <li>
               <h1>{post.title}</h1>
