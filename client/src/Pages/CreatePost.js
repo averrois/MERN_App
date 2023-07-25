@@ -37,10 +37,16 @@ function CreatePost() {
     }
   }
 
+  const isLogin = (e) => {
+    e.preventDefault();
+    alert("Please, login first!");
+  }  
+
+
   return (
     <div className='post'>
       <div className="post-container">
-        <form onSubmit={onSubmit}>
+        <form onSubmit={cookies.access_token ? onSubmit : isLogin}>
           <h3>Create Post</h3>
           <div className='row title_inp'>
             <label htmlFor='title'>title</label>
